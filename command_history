@@ -1,0 +1,17 @@
+php artisan make:model -c -m SunuGarantie
+
+php artisan make:model -c -m SunuPaiement
+
+php artisan make:model -c -m SunuModePaiement
+
+php artisan make:model -c -m SunuMotoMarque
+
+php artisan make:model -c -m SunuMotoGenre
+
+php artisan make:model -c -m SunuMotoType
+
+php artisan db:seed --class=GarantieSeeder
+
+php artisan make:controller DataController
+
+php artisan make:model -c -m SunuMoto

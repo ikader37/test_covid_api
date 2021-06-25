@@ -1,0 +1,52 @@
+namespace App\Http\Controllers;
+
+use App\Todo;
+use App\User;
+use ArielMejiaDev\LarapexCharts\Facades\LarapexChart;
+use Illuminate\Http\Request;
+
+class ChartController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke()
+    {
+
+        $user = User::first();
+        $userTwo = User::find(2);
+
+        $usercurrentMonthTodos = Todo::where('user_id', $user->id)->whereStatus(true)->whereMonth('created_at', '=', now()->month)->count();
+        $userTodosAMonthAgo = Todo::where('user_id', $user->id)->whereStatus(true)->whereMonth('created_at', '=', now()->subMonth()->month)->count();
+        $userTodosTwoMonthAgo = Todo::where('user_id', $user->id)->whereStatus(true)->whereMonth('created_at', '=', now()->subMonths(2)->month)->count();
+
+        $userTwocurrentMonthTodos = Todo::where('user_id', $userTwo->id)->whereStatus(true)->whereMonth('created_at', '=', now()->month)->count();
+        $userTwoTodosAMonthAgo = Todo::where('user_id', $userTwo->id)->whereStatus(true)->whereMonth('created_at', '=', now()->subMonth()->month)->count();
+        $userTwoTodosTwoMonthAgo = Todo::where('user_id', $userTwo->id)->whereStatus(true)->whereMonth('created_at', '=', now()->subMonths(2)->month)->count();
+
+        $chart = LarapexChart::setType('line')
+            ->setLabels([$user->name, $userTwo->name])
+            ->setXAxis(['Now', 'A month ago', '2 months ago'])
+            ->setDataset([
+            [
+                'username' => $user->name,
+                'data' => [
+                    $usercurrentMonthTodos, $userTodosAMonthAgo, $userTodosTwoMonthAgo
+                ]
+            ],
+            [
+                'username' => $userTwo->name,
+                'data' => [
+                    $userTwocurrentMonthTodos, $userTwoTodosAMonthAgo, $userTwoTodosTwoMonthAgo
+                ]
+            ]
+        ]);
+
+
+        return view('chart', compact('chart'));
+    }
+
+
+} 

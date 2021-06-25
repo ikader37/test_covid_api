@@ -1,0 +1,81 @@
+curl -i --header "Accept: application/json" --header "Content-Type: application/json" --request POST --data @command_curl_file.json http://localhost:8000/api/assures/enregistrer
+curl -i --header "Accept: application/json" --header "Content-Type: application/json" --request GET http://localhost:8000/api/data
+curl -i --header "Accept: application/json" --header "Content-Type: application/json" --request POST --data @command_curl_enrgpaie.json http://localhost:8000/api/paiements/enregistrer-paiement
+
+WINDOWS
+====================================================================================================
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d @command_curl_enrgpaie.json ^
+http://localhost:8000/api/paiements/enregistrer-paiement
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d @command_curl_enrgpaie.json ^
+http://yikishop.com/sunu2roue_server/public/api/paiements/enregistrer-paiement
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d @command_curl_valenrg.json ^
+http://localhost:8000/api/paiements/valider-paiement
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d "name=admin&email=admin@email.com&password=123456" ^
+http://localhost:8000/api/register
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d "email=app@sunu.com&password=JN6dZtX3x7kHrPQ" ^
+http://yikishop.com/sunu2roue_server/api/login
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d "id=1" ^
+localhost:8000/api/souscription/traite
+
+curl -i ^
+--header "Accept: application/json" ^
+--header "Content-Type: application/json" ^
+--request POST ^
+-d @command_curl_file.json ^
+localhost:8000/api/assures/enregistrer
+
+curl -i \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--request POST \
+-d @command_curl_enrgpaie.json \
+http://yikishop.com/test_covid/public/api/paiements/enregistrer-paiement
+
+curl -i \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--request POST \
+-d @command_curl_enrgpersonnes.json \
+http://yikishop.com/test_covid/public/api/personnes/enregistrer
+
+curl -i \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--request POST \
+-d @command_curl_enrgnumpaiement.json \
+http://yikishop.com/test_covid/public/api/personnes/enregistrer-telephone-paiement
+
+curl -i \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--request GET \
+http://yikishop.com/test_covid/public/api/personnes

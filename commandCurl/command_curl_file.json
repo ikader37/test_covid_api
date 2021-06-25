@@ -1,0 +1,16 @@
+{
+    "nom_prenom": "this.nom",
+    "telephone": "this.telephone",
+    "email": "this.email",
+    "adresse": "this.adresse",
+    "ville": "this.ville",
+    "profession": "this.profession",
+    "moto_type": "this.type",
+    "moto_marque": "this.marque",
+    "moto_genre": "this.genre",
+    "premiere_mise_circulation": "this.miseCirculation",
+    "numero_chassis": "this.chassis",
+    "puissance": "this.puissance",
+    "capital_assure": "this.capital",
+    "valeur_moto": "this.valeur_moto"
+}

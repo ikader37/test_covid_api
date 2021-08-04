@@ -10,6 +10,7 @@ Route::get('/sites', [CovidApiController::class, 'sites']);
 
 Route::get('/personnes', [CovidPersonneController::class, 'index']);
 Route::post('/personnes/enregistrer', [CovidPersonneController::class, 'enregistrer']);
+Route::post('/personnes/enregistrerUser', [CovidPersonneController::class, 'enregistrerUser']);
 Route::post('/personnes/enregistrer-telephone-paiement', [CovidPersonneController::class, 'enregistrerTelephonePaiement']);
 
 Route::post('/paiements/enregistrer-paiement', [CovidPaiementController::class, 'enregistrerPaiement']);

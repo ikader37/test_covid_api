@@ -20,6 +20,19 @@ class CreateCovidPersonnesTable extends Migration
             $table->string('profession')->nullable();
             $table->string('telephone');
             $table->string('sexe')->nullable();
+            $table->string('site');
+            $table->string('programmer');
+            $table->string('date_prelevement');
+            $table->string('ville');
+            $table->string('tuteur');
+            $table->string('tel_tuteur');
+            $table->string('residence');
+            $table->string('ville_village');
+            $table->string('quartier_secteur');
+            $table->string('telephone_2');
+            $table->string('numero_paiement');
+            $table->string('prix');
+            $table->string('transaction_id');
             $table->timestamps();
         });
     }
